@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Sample.Data
 {
-    public class Grade
+    public class Grade : BaseEntity
     {
-        public int GradeId { get; set; }
         public string GradeName { get; set; }
         public string Section { get; set; }
     }

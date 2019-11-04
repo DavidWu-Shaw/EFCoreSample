@@ -11,47 +11,47 @@ namespace Sample.Repository.Migrations
                 name: "Courses",
                 columns: table => new
                 {
-                    CourseId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CourseName = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Courses", x => x.CourseId);
+                    table.PrimaryKey("PK_Courses", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Grades",
                 columns: table => new
                 {
-                    GradeId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     GradeName = table.Column<string>(nullable: true),
                     Section = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Grades", x => x.GradeId);
+                    table.PrimaryKey("PK_Grades", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Students",
                 columns: table => new
                 {
-                    StudentId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     GradeId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Students", x => x.StudentId);
+                    table.PrimaryKey("PK_Students", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Students_Grades_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "GradeId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 

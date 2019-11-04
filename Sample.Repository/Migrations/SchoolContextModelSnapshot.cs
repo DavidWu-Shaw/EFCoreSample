@@ -20,7 +20,7 @@ namespace Sample.Repository.Migrations
 
             modelBuilder.Entity("Sample.Data.Course", b =>
                 {
-                    b.Property<int>("CourseId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -28,14 +28,14 @@ namespace Sample.Repository.Migrations
 
                     b.Property<string>("Description");
 
-                    b.HasKey("CourseId");
+                    b.HasKey("Id");
 
                     b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("Sample.Data.Grade", b =>
                 {
-                    b.Property<int>("GradeId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -43,14 +43,14 @@ namespace Sample.Repository.Migrations
 
                     b.Property<string>("Section");
 
-                    b.HasKey("GradeId");
+                    b.HasKey("Id");
 
                     b.ToTable("Grades");
                 });
 
             modelBuilder.Entity("Sample.Data.Student", b =>
                 {
-                    b.Property<int>("StudentId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -58,7 +58,7 @@ namespace Sample.Repository.Migrations
 
                     b.Property<string>("Name");
 
-                    b.HasKey("StudentId");
+                    b.HasKey("Id");
 
                     b.HasIndex("GradeId");
 

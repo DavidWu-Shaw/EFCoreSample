@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Sample.Data
 {
-    public class Course
+    public class Course : BaseEntity
     {
-        public int CourseId { get; set; }
         public string CourseName { get; set; }
         public string Description { get; set; }
     }
